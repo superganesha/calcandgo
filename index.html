@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Online Calculators - Mortgage, BMI, Tip, Loan & More</title>
+  <meta name="description" content="A free collection of detailed calculators: mortgage (with taxes, insurance, PMI, HOA), loan payoff, BMI & calorie needs, tip splitter, percentage calculator, multi-category unit converter, and an advanced math solver covering algebra, calculus, linear algebra, and CS tools. No sign-up required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Calc<span>Hub</span></h1>
+      <p class="tagline">Simple, free, accurate calculators</p>
+    </div>
+  </header>
+
+  <nav class="calc-nav" aria-label="Calculator selection">
+    <div class="container">
+      <button class="nav-btn active" data-calc="mortgage">Mortgage</button>
+      <button class="nav-btn" data-calc="loan">Loan</button>
+      <button class="nav-btn" data-calc="bmi">BMI</button>
+      <button class="nav-btn" data-calc="tip">Tip Splitter</button>
+      <button class="nav-btn" data-calc="percentage">Percentage</button>
+      <button class="nav-btn" data-calc="unit">Unit Converter</button>
+      <button class="nav-btn" data-calc="advmath">Advanced Math</button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Mortgage Calculator -->
+    <section class="calc-panel active" id="mortgage" aria-labelledby="mortgage-heading">
+      <h2 id="mortgage-heading">Mortgage Calculator</h2>
+      <p class="hint">Select your state to auto-fill an estimated property tax based on state average rates. This is a rough estimate only — replace it with the actual rate from your listing or county assessor for accuracy.</p>
+      <div class="form-grid">
+        <label for="m-amount">Home Price ($)
+          <input type="number" id="m-amount" min="0" step="0.01" placeholder="350000" inputmode="decimal">
+        </label>
+        <label for="m-state">State (for tax estimate)
+          <select id="m-state">
+            <option value="">-- Select State (optional) --</option>
+          </select>
+        </label>
+        <label for="m-down">Down Payment ($)
+          <input type="number" id="m-down" min="0" step="0.01" placeholder="50000" inputmode="decimal">
+        </label>
+        <label for="m-rate">Annual Interest Rate (%)
+          <input type="number" id="m-rate" min="0" step="0.01" placeholder="6.5" inputmode="decimal">
+        </label>
+        <label for="m-years">Loan Term (years)
+          <input type="number" id="m-years" min="1" step="1" placeholder="30" inputmode="numeric">
+        </label>
+        <label for="m-tax">Annual Property Tax ($)
+          <input type="number" id="m-tax" min="0" step="0.01" placeholder="3600" inputmode="decimal">
+        </label>
+        <label for="m-insurance">Annual Home Insurance ($)
+          <input type="number" id="m-insurance" min="0" step="0.01" placeholder="1200" inputmode="decimal">
+        </label>
+        <label for="m-pmi">Annual PMI ($)
+          <input type="number" id="m-pmi" min="0" step="0.01" placeholder="0" inputmode="decimal">
+        </label>
+        <label for="m-hoa">Monthly HOA Fees ($)
+          <input type="number" id="m-hoa" min="0" step="0.01" placeholder="0" inputmode="decimal">
+        </label>
+      </div>
+      <button class="calc-btn" data-action="calc-mortgage">Calculate</button>
+      <div class="result" id="m-result" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Loan Calculator -->
+    <section class="calc-panel" id="loan" aria-labelledby="loan-heading">
+      <h2 id="loan-heading">Loan Calculator</h2>
+      <div class="form-grid">
+        <label for="l-amount">Loan Amount ($)
+          <input type="number" id="l-amount" min="0" step="0.01" placeholder="10000" inputmode="decimal">
+        </label>
+        <label for="l-rate">Annual Interest Rate (%)
+          <input type="number" id="l-rate" min="0" step="0.01" placeholder="8" inputmode="decimal">
+        </label>
+        <label for="l-months">Term (months)
+          <input type="number" id="l-months" min="1" step="1" placeholder="36" inputmode="numeric">
+        </label>
+        <label for="l-fee">Origination Fee ($)
+          <input type="number" id="l-fee" min="0" step="0.01" placeholder="0" inputmode="decimal">
+        </label>
+        <label for="l-extra">Extra Monthly Payment ($)
+          <input type="number" id="l-extra" min="0" step="0.01" placeholder="0" inputmode="decimal">
+        </label>
+      </div>
+      <button class="calc-btn" data-action="calc-loan">Calculate</button>
+      <div class="result" id="l-result" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- BMI Calculator -->
+    <section class="calc-panel" id="bmi" aria-labelledby="bmi-heading">
+      <h2 id="bmi-heading">BMI &amp; Calorie Calculator</h2>
+      <div class="form-grid">
+        <label for="b-weight">Weight (kg)
+          <input type="number" id="b-weight" min="0" step="0.1" placeholder="70" inputmode="decimal">
+        </label>
+        <label for="b-height">Height (cm)
+          <input type="number" id="b-height" min="0" step="0.1" placeholder="175" inputmode="decimal">
+        </label>
+        <label for="b-age">Age (years)
+          <input type="number" id="b-age" min="1" step="1" placeholder="30" inputmode="numeric">
+        </label>
+        <label for="b-gender">Gender
+          <select id="b-gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+        <label for="b-activity" class="full-width">Activity Level
+          <select id="b-activity">
+            <option value="1.2">Sedentary (little or no exercise)</option>
+            <option value="1.375">Lightly active (1-3 days/week)</option>
+            <option value="1.55">Moderately active (3-5 days/week)</option>
+            <option value="1.725">Very active (6-7 days/week)</option>
+            <option value="1.9">Extremely active (physical job/training)</option>
+          </select>
+        </label>
+      </div>
+      <button class="calc-btn" data-action="calc-bmi">Calculate</button>
+      <div class="result" id="b-result" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Tip Splitter -->
+    <section class="calc-panel" id="tip" aria-labelledby="tip-heading">
+      <h2 id="tip-heading">Tip Splitter</h2>
+      <div class="form-grid">
+        <label for="t-bill">Bill Amount ($)
+          <input type="number" id="t-bill" min="0" step="0.01" placeholder="100" inputmode="decimal">
+        </label>
+        <label for="t-tax">Sales Tax (%)
+          <input type="number" id="t-tax" min="0" step="0.01" placeholder="0" inputmode="decimal">
+        </label>
+        <label for="t-percent">Tip Percentage (%)
+          <input type="number" id="t-percent" min="0" step="1" placeholder="15" inputmode="numeric">
+        </label>
+        <label for="t-tipbase">Tip Calculated On
+          <select id="t-tipbase">
+            <option value="pretax">Bill Before Tax</option>
+            <option value="posttax">Bill After Tax</option>
+          </select>
+        </label>
+        <label for="t-people">Number of People
+          <input type="number" id="t-people" min="1" step="1" placeholder="1" inputmode="numeric">
+        </label>
+        <label for="t-round">Round Up Total Per Person
+          <select id="t-round">
+            <option value="none">No Rounding</option>
+            <option value="dollar">Nearest Dollar</option>
+            <option value="five">Nearest $5</option>
+          </select>
+        </label>
+      </div>
+      <button class="calc-btn" data-action="calc-tip">Calculate</button>
+      <div class="result" id="t-result" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Percentage Calculator -->
+    <section class="calc-panel" id="percentage" aria-labelledby="percentage-heading">
+      <h2 id="percentage-heading">Percentage Calculator</h2>
+      <div class="form-grid">
+        <label for="p-mode" class="full-width">Calculation Type
+          <select id="p-mode">
+            <option value="of">What is X% of Y?</option>
+            <option value="is-what-percent">X is what percent of Y?</option>
+            <option value="change">Increase/Decrease Y by X%</option>
+            <option value="percent-change">Percent change from X to Y</option>
+          </select>
+        </label>
+        <label for="p-x" id="p-x-label">X (Percentage %)
+          <input type="number" id="p-x" step="0.01" placeholder="20" inputmode="decimal">
+        </label>
+        <label for="p-y" id="p-y-label">Y (Value)
+          <input type="number" id="p-y" step="0.01" placeholder="150" inputmode="decimal">
+        </label>
+      </div>
+      <button class="calc-btn" data-action="calc-percentage">Calculate</button>
+      <div class="result" id="p-result" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Unit Converter -->
+    <section class="calc-panel" id="unit" aria-labelledby="unit-heading">
+      <h2 id="unit-heading">Unit Converter</h2>
+      <div class="form-grid">
+        <label for="u-category">Category
+          <select id="u-category">
+            <option value="length">Length</option>
+            <option value="weight">Weight / Mass</option>
+            <option value="volume">Volume</option>
+            <option value="temperature">Temperature</option>
+            <option value="area">Area</option>
+            <option value="speed">Speed</option>
+            <option value="time">Time</option>
+            <option value="data">Digital Storage</option>
+          </select>
+        </label>
+        <label for="u-value">Value
+          <input type="number" id="u-value" step="any" placeholder="10" inputmode="decimal">
+        </label>
+        <label for="u-from">From
+          <select id="u-from"></select>
+        </label>
+        <label for="u-to">To
+          <select id="u-to"></select>
+        </label>
+      </div>
+      <button class="calc-btn" data-action="calc-unit">Convert</button>
+      <div class="result" id="u-result" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Advanced Math -->
+    <section class="calc-panel" id="advmath" aria-labelledby="advmath-heading">
+      <h2 id="advmath-heading">Advanced Math Solver</h2>
+      <p class="hint">Covers algebra, calculus, linear algebra, and computer science math. Step-by-step explanations are provided where possible.</p>
+
+      <div class="subtab-nav" aria-label="Math topic selection">
+        <button class="subtab-btn active" data-subtab="am-algebra">Algebra</button>
+        <button class="subtab-btn" data-subtab="am-calculus">Calculus</button>
+        <button class="subtab-btn" data-subtab="am-linalg">Linear Algebra</button>
+        <button class="subtab-btn" data-subtab="am-cs">CS Tools</button>
+      </div>
+
+      <!-- Algebra -->
+      <div class="subtab-panel active" id="am-algebra">
+        <div class="form-grid">
+          <label for="am-alg-mode">Mode
+            <select id="am-alg-mode">
+              <option value="simplify">Simplify Expression</option>
+              <option value="evaluate">Evaluate Expression</option>
+              <option value="linear">Solve Linear Equation (ax + b = c)</option>
+              <option value="quadratic">Solve Quadratic Equation (ax&sup2; + bx + c = 0)</option>
+            </select>
+          </label>
+          <label for="am-alg-input" class="full-width" id="am-alg-input-label">Expression
+            <input type="text" id="am-alg-input" placeholder="2x + 3x - 5" inputmode="text">
+          </label>
+          <label for="am-alg-vars" class="full-width" id="am-alg-vars-wrap" style="display:none">Variable Values (e.g. x=2, y=3)
+            <input type="text" id="am-alg-vars" placeholder="x=2, y=3" inputmode="text">
+          </label>
+        </div>
+        <button class="calc-btn" data-action="calc-algebra">Solve</button>
+        <div class="result" id="am-alg-result" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Calculus -->
+      <div class="subtab-panel" id="am-calculus">
+        <div class="form-grid">
+          <label for="am-calc-mode">Mode
+            <select id="am-calc-mode">
+              <option value="derivative">Derivative</option>
+              <option value="integral">Indefinite Integral (basic patterns)</option>
+              <option value="limit">Numerical Limit Estimate</option>
+            </select>
+          </label>
+          <label for="am-calc-input" class="full-width">Function f(x)
+            <input type="text" id="am-calc-input" placeholder="x^3 + 2x^2 - 5x" inputmode="text">
+          </label>
+          <label for="am-calc-var" id="am-calc-var-label">With respect to
+            <input type="text" id="am-calc-var" placeholder="x" value="x" inputmode="text">
+          </label>
+          <label for="am-calc-point" id="am-calc-point-label" style="display:none">Point (x &rarr;)
+            <input type="number" id="am-calc-point" placeholder="0" step="any" inputmode="decimal">
+          </label>
+        </div>
+        <button class="calc-btn" data-action="calc-calculus">Solve</button>
+        <div class="result" id="am-calc-result" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Linear Algebra -->
+      <div class="subtab-panel" id="am-linalg">
+        <div class="form-grid">
+          <label for="am-la-mode">Mode
+            <select id="am-la-mode">
+              <option value="add">Matrix Add</option>
+              <option value="subtract">Matrix Subtract</option>
+              <option value="multiply">Matrix Multiply</option>
+              <option value="det">Determinant</option>
+              <option value="inverse">Inverse</option>
+              <option value="transpose">Transpose</option>
+              <option value="system">Solve Linear System (Gaussian Elimination)</option>
+            </select>
+          </label>
+          <label for="am-la-a" class="full-width" id="am-la-a-label">Matrix A (rows separated by ; , values by ,)
+            <input type="text" id="am-la-a" placeholder="1,2;3,4" inputmode="text">
+          </label>
+          <label for="am-la-b" class="full-width" id="am-la-b-label" style="display:none">Matrix B (rows separated by ; , values by ,)
+            <input type="text" id="am-la-b" placeholder="5,6;7,8" inputmode="text">
+          </label>
+        </div>
+        <button class="calc-btn" data-action="calc-linalg">Solve</button>
+        <div class="result" id="am-la-result" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- CS Tools -->
+      <div class="subtab-panel" id="am-cs">
+        <div class="form-grid">
+          <label for="am-cs-mode">Mode
+            <select id="am-cs-mode">
+              <option value="base">Number Base Converter</option>
+              <option value="boolean">Boolean Logic Evaluator</option>
+              <option value="bigo">Big-O Complexity Reference</option>
+            </select>
+          </label>
+          <label for="am-cs-input" class="full-width" id="am-cs-input-label">Value
+            <input type="text" id="am-cs-input" placeholder="255" inputmode="text">
+          </label>
+          <label for="am-cs-from" id="am-cs-from-label">From Base
+            <select id="am-cs-from">
+              <option value="2">Binary (Base 2)</option>
+              <option value="8">Octal (Base 8)</option>
+              <option value="10" selected>Decimal (Base 10)</option>
+              <option value="16">Hexadecimal (Base 16)</option>
+            </select>
+          </label>
+          <label for="am-cs-to" id="am-cs-to-label">To Base
+            <select id="am-cs-to">
+              <option value="2">Binary (Base 2)</option>
+              <option value="8">Octal (Base 8)</option>
+              <option value="10">Decimal (Base 10)</option>
+              <option value="16" selected>Hexadecimal (Base 16)</option>
+            </select>
+          </label>
+        </div>
+        <button class="calc-btn" data-action="calc-cs">Solve</button>
+        <div class="result" id="am-cs-result" role="status" aria-live="polite"></div>
+      </div>
+
+      <p class="hint" id="am-loading-note">Loading math engine&hellip;</p>
+    </section>
+
+  </main>
+
+  <!-- AdSense placeholder slots (replace data-ad-* with your real values once approved) -->
+  <aside class="ad-slot container" aria-label="Advertisement">
+    <!--
+      Paste your AdSense <ins class="adsbygoogle"> unit here once approved.
+      Do NOT add ad code before AdSense approval - this can get your site flagged.
+    -->
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CalcHub. All calculations are estimates for informational purposes only.</p>
+      <p><a href="mortgage-guide.html">Mortgage Guide</a> &middot; <a href="guides.html">Calculator Guides &amp; FAQ</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="about.html">About</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
