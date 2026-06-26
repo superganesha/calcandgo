@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator with State Property Tax | CalcAndGo</title>
+  <meta name="description" content="Free mortgage calculator with property tax estimates for all 50 states. Calculate monthly payments, total interest, and amortization schedule. No sign-up required.">
+  <link rel="canonical" href="https://calcandgo.com/mortgage.html">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3432166022869677" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator","url":"https://calcandgo.com/mortgage.html","description":"Free mortgage calculator with state property tax estimates for all 50 US states and DC.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Calc<span>And</span>Go</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown"><a href="index.html#calculators">Calculators</a>
+        <div class="nav-dropdown-menu">
+          <a href="mortgage.html">🏠 Mortgage</a><a href="loan.html">💳 Loan</a><a href="bmi.html">⚖️ BMI &amp; Health</a><a href="tip.html">🍽️ Tip Splitter</a><a href="percentage.html">📊 Percentage</a><a href="converter.html">🔄 Unit Converter</a><a href="math-solver.html">🧮 Math Solver</a>
+        </div>
+      </div>
+      <a href="blog.html">Blog</a><a href="guides.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<div class="breadcrumb"><div class="container"><a href="index.html">Home</a> <span>›</span> <span>Mortgage Calculator</span></div></div>
+
+<div class="page-header">
+  <h1>🏠 Mortgage Calculator</h1>
+  <p>Estimate your monthly payment with property taxes, homeowners insurance, and amortization — for all 50 states.</p>
+</div>
+
+<div class="container">
+  <div class="content-section" style="max-width:860px;">
+
+    <p>Buying a home is the largest financial decision most people will ever make. Our mortgage calculator helps you understand exactly what your monthly obligation will be — not just the principal and interest, but also property taxes (automatically estimated based on your state), homeowners insurance, and optional PMI. Enter your numbers below and get a complete payment breakdown in seconds.</p>
+
+    <!-- CALCULATOR -->
+    <div class="calc-card">
+      <h2>Calculate Your Mortgage Payment</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="homePrice">Home Price ($)</label>
+          <input type="number" id="homePrice" value="400000" min="1">
+        </div>
+        <div class="form-group">
+          <label for="downPayment">Down Payment ($)</label>
+          <input type="number" id="downPayment" value="80000" min="0">
+        </div>
+        <div class="form-group">
+          <label for="interestRate">Annual Interest Rate (%)</label>
+          <input type="number" id="interestRate" value="6.5" min="0.1" max="30" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="loanTerm">Loan Term</label>
+          <select id="loanTerm">
+            <option value="30">30 years</option>
+            <option value="20">20 years</option>
+            <option value="15">15 years</option>
+            <option value="10">10 years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="stateSelect">State (for property tax)</label>
+          <select id="stateSelect">
+            <option value="0.73">California (0.73%)</option>
+            <option value="1.60">Texas (1.60%)</option>
+            <option value="0.86">Florida (0.86%)</option>
+            <option value="1.40">New York (1.40%)</option>
+            <option value="0.40">Alabama (0.40%)</option>
+            <option value="1.04">Alaska (1.04%)</option>
+            <option value="0.60">Arizona (0.60%)</option>
+            <option value="0.61">Arkansas (0.61%)</option>
+            <option value="0.49">Colorado (0.49%)</option>
+            <option value="1.79">Connecticut (1.79%)</option>
+            <option value="0.53">Delaware (0.53%)</option>
+            <option value="0.87">Georgia (0.87%)</option>
+            <option value="0.28">Hawaii (0.28%)</option>
+            <option value="0.63">Idaho (0.63%)</option>
+            <option value="2.07">Illinois (2.07%)</option>
+            <option value="0.83">Indiana (0.83%)</option>
+            <option value="1.53">Iowa (1.53%)</option>
+            <option value="1.33">Kansas (1.33%)</option>
+            <option value="0.80">Kentucky (0.80%)</option>
+            <option value="0.55">Louisiana (0.55%)</option>
+            <option value="1.09">Maine (1.09%)</option>
+            <option value="1.07">Maryland (1.07%)</option>
+            <option value="1.12">Massachusetts (1.12%)</option>
+            <option value="1.64">Michigan (1.64%)</option>
+            <option value="1.12">Minnesota (1.12%)</option>
+            <option value="0.65">Mississippi (0.65%)</option>
+            <option value="0.97">Missouri (0.97%)</option>
+            <option value="0.76">Montana (0.76%)</option>
+            <option value="1.61">Nebraska (1.61%)</option>
+            <option value="0.55">Nevada (0.55%)</option>
+            <option value="1.93">New Hampshire (1.93%)</option>
+            <option value="2.47">New Jersey (2.47%)</option>
+            <option value="0.55">New Mexico (0.55%)</option>
+            <option value="0.77">North Carolina (0.77%)</option>
+            <option value="0.98">North Dakota (0.98%)</option>
+            <option value="1.59">Ohio (1.59%)</option>
+            <option value="0.90">Oklahoma (0.90%)</option>
+            <option value="0.82">Oregon (0.82%)</option>
+            <option value="1.43">Pennsylvania (1.43%)</option>
+            <option value="1.53">Rhode Island (1.53%)</option>
+            <option value="0.55">South Carolina (0.55%)</option>
+            <option value="1.08">South Dakota (1.08%)</option>
+            <option value="0.56">Tennessee (0.56%)</option>
+            <option value="0.55">Utah (0.55%)</option>
+            <option value="1.59">Vermont (1.59%)</option>
+            <option value="0.82">Virginia (0.82%)</option>
+            <option value="0.84">Washington (0.84%)</option>
+            <option value="0.53">West Virginia (0.53%)</option>
+            <option value="1.76">Wisconsin (1.76%)</option>
+            <option value="0.55">Wyoming (0.55%)</option>
+            <option value="0.56">Washington D.C. (0.56%)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="insurance">Annual Home Insurance ($)</label>
+          <input type="number" id="insurance" value="1500" min="0">
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcMortgage()">Calculate Payment</button>
+
+      <div class="results" id="mortgageResults">
+        <div class="result-grid">
+          <div class="result-item"><div class="result-label">Monthly Payment</div><div class="result-value" id="rMonthly">—</div></div>
+          <div class="result-item"><div class="result-label">Principal & Interest</div><div class="result-value" id="rPI">—</div></div>
+          <div class="result-item"><div class="result-label">Monthly Tax</div><div class="result-value" id="rTax">—</div></div>
+          <div class="result-item"><div class="result-label">Monthly Insurance</div><div class="result-value" id="rIns">—</div></div>
+          <div class="result-item"><div class="result-label">Loan Amount</div><div class="result-value" id="rLoan">—</div></div>
+          <div class="result-item"><div class="result-label">Total Interest</div><div class="result-value accent" id="rInterest">—</div></div>
+        </div>
+        <p class="result-note">⚠️ Property tax is estimated using your state's average effective rate. Actual rates vary by county and city. Insurance estimate is based on your input. These are estimates — contact a lender for an official quote.</p>
+
+        <!-- Amortization -->
+        <div class="tab-btns" style="margin-top:1.25rem;">
+          <button class="tab-btn active" onclick="showTab('summary')">Payment Summary</button>
+          <button class="tab-btn" onclick="showTab('amort')">Amortization Schedule</button>
+        </div>
+        <div id="tab-summary">
+          <canvas id="mortChart" height="200" style="max-width:100%;"></canvas>
+        </div>
+        <div id="tab-amort" style="display:none;">
+          <div class="amort-wrapper"><table class="data-table" id="amortTable"><thead><tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead><tbody id="amortBody"></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>How to Use This Mortgage Calculator</h2>
+    <ol class="steps">
+      <li><span><strong>Enter the home price</strong> — the total purchase price of the property you're considering.</span></li>
+      <li><span><strong>Enter your down payment</strong> — typically 3–20% of the purchase price. A down payment under 20% usually requires PMI.</span></li>
+      <li><span><strong>Enter the interest rate</strong> — use the rate you've been quoted, or check current average rates. As of mid-2026, 30-year fixed rates are around 6.5–7%.</span></li>
+      <li><span><strong>Select your loan term</strong> — 30-year loans have lower monthly payments; 15-year loans save dramatically on total interest.</span></li>
+      <li><span><strong>Choose your state</strong> — we auto-estimate property tax using your state's average effective rate.</span></li>
+      <li><span><strong>Enter your insurance estimate</strong> — a typical homeowners insurance policy runs $1,200–$2,500/year depending on location and coverage.</span></li>
+    </ol>
+
+    <h2>Understanding Your Mortgage Payment</h2>
+    <p>A mortgage payment is made up of several components, often referred to as PITI: <strong>Principal, Interest, Taxes, and Insurance</strong>.</p>
+    <p><strong>Principal</strong> is the portion of your payment that reduces your actual loan balance. In the early years of a mortgage, a very small portion of each payment goes toward principal — this is called <em>amortization</em>. Over time, the split gradually shifts as you owe less and less.</p>
+    <p><strong>Interest</strong> is the cost of borrowing. It's calculated monthly on your remaining balance. On a $320,000 loan at 6.5%, your very first payment includes roughly $1,733 in interest alone.</p>
+    <p><strong>Property taxes</strong> are levied by your local government based on your home's assessed value. They're collected monthly through escrow by your lender and paid on your behalf annually. They vary enormously by state — from 0.28% in Hawaii to over 2.4% in New Jersey.</p>
+    <p><strong>Homeowners insurance</strong> protects your property against damage, theft, and liability. Lenders require it. Monthly escrow typically covers this alongside property taxes.</p>
+
+    <div class="info-box"><p>💡 <strong>Tip:</strong> Even a small extra monthly payment — say $100/month on a 30-year loan — can shave years off your payoff date and save tens of thousands in interest. Use our <a href="loan.html">Loan Calculator</a> to model extra payment scenarios.</p></div>
+
+    <h2>Worked Example</h2>
+    <p>Let's say you're buying a home in California for <strong>$450,000</strong>, putting <strong>$90,000</strong> (20%) down, with a <strong>6.5% interest rate</strong> on a 30-year fixed mortgage.</p>
+    <ul>
+      <li>Loan amount: $360,000</li>
+      <li>Monthly P&amp;I: $2,275</li>
+      <li>Monthly property tax (0.73%): $274</li>
+      <li>Monthly homeowners insurance: $125</li>
+      <li><strong>Total monthly payment: ~$2,674</strong></li>
+      <li>Total interest paid over 30 years: $459,009</li>
+    </ul>
+    <p>That total interest figure often surprises people — you end up paying more in interest than your original loan amount over 30 years. Refinancing to a 15-year term or making extra payments are two effective strategies to reduce it.</p>
+
+    <h2>15-Year vs. 30-Year Mortgage: Which Is Better?</h2>
+    <p>This is one of the most common questions homebuyers have. The answer depends on your financial situation and priorities.</p>
+    <p>A <strong>30-year mortgage</strong> gives you a lower monthly payment, freeing up cash flow for other goals — investing, emergencies, or childcare. The tradeoff is significantly more interest paid over the life of the loan.</p>
+    <p>A <strong>15-year mortgage</strong> typically comes with a lower interest rate (often 0.5–0.75% lower) and cuts your total interest cost dramatically. On a $360,000 loan, switching from 30 to 15 years can save over $200,000 in interest — but your monthly payment will be roughly 40% higher.</p>
+    <p>A practical middle ground: take the 30-year mortgage but make extra principal payments when cash flow allows. This gives you flexibility while accelerating payoff.</p>
+
+    <h2>What Is Private Mortgage Insurance (PMI)?</h2>
+    <p>If your down payment is less than 20% of the purchase price, most conventional lenders will require you to pay PMI. This insurance protects the lender (not you) if you default on the loan. PMI typically costs 0.5–1.5% of the loan amount annually, added to your monthly payment.</p>
+    <p>The good news: once your loan balance drops to 80% of the original appraised value, you can request PMI cancellation. It's automatically removed at 78% under the Homeowners Protection Act.</p>
+
+    <!-- FAQ -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">How accurate is this mortgage calculator?</div>
+        <div class="faq-answer">Our calculator uses the standard amortization formula and real state average property tax rates. It's highly accurate for P&I calculations. Property tax and insurance are estimates — your actual costs will depend on your specific county, city, and insurance provider. Always verify with your lender before making financial decisions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">What credit score do I need for a mortgage?</div>
+        <div class="faq-answer">For a conventional loan, most lenders want a minimum score of 620, though 740+ will get you the best rates. FHA loans are available with scores as low as 580 (with 3.5% down) or even 500 (with 10% down). VA and USDA loans have no official minimum, but lenders typically look for 620+.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">What is a good debt-to-income ratio for a mortgage?</div>
+        <div class="faq-answer">Most lenders want your total monthly debt payments (including your new mortgage) to be no more than 43% of your gross monthly income. The ideal ratio is below 36%. To calculate yours, add up all monthly debt payments (car loan, student loans, credit cards, and proposed mortgage), then divide by your monthly gross income.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Can I afford a $400,000 house?</div>
+        <div class="faq-answer">Using the 28% rule, your monthly mortgage payment shouldn't exceed 28% of your gross monthly income. A $400,000 home with 10% down at 6.5% for 30 years would have a monthly P&I of about $2,275. Adding taxes and insurance, you're looking at ~$2,700–$3,000/month. To stay within 28%, you'd need a gross income of roughly $10,700/month ($128,400/year).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">What's the difference between pre-qualification and pre-approval?</div>
+        <div class="faq-answer">Pre-qualification is a quick estimate based on self-reported information — no credit check. Pre-approval involves verifying your income, assets, and credit. Pre-approval carries more weight with sellers and gives you a firm loan amount. Always get pre-approved before making serious offers on homes.</div>
+      </div>
+    </div>
+
+    <div class="mt-3 text-center">
+      <a href="mortgage-guide.html" class="btn btn-blue">Read Full Mortgage Guide →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Calc<span>And</span>Go</div><p>Free, fast, and accurate calculators for everyday financial and math decisions.</p></div>
+      <div><h4>Calculators</h4><ul><li><a href="mortgage.html">Mortgage</a></li><li><a href="loan.html">Loan</a></li><li><a href="bmi.html">BMI</a></li><li><a href="tip.html">Tip</a></li><li><a href="percentage.html">Percentage</a></li><li><a href="converter.html">Unit Converter</a></li><li><a href="math-solver.html">Math Solver</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="blog.html">Blog</a></li><li><a href="guides.html">Guides</a></li><li><a href="mortgage-guide.html">Mortgage Guide</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 CalcAndGo. Results are estimates — consult a licensed mortgage professional.</p></div>
+  </div>
+</footer>
+
+<script>
+function fmt(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});}
+function fmtD(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+function calcMortgage(){
+  const price=parseFloat(document.getElementById('homePrice').value)||0;
+  const down=parseFloat(document.getElementById('downPayment').value)||0;
+  const rate=parseFloat(document.getElementById('interestRate').value)||0;
+  const years=parseInt(document.getElementById('loanTerm').value)||30;
+  const taxRate=parseFloat(document.getElementById('stateSelect').value)||0;
+  const ins=parseFloat(document.getElementById('insurance').value)||0;
+
+  if(price<=0||rate<=0){alert('Please enter valid numbers.');return;}
+  const P=price-down;
+  const r=rate/100/12;
+  const n=years*12;
+  const pi=P*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+  const monthlyTax=(price*taxRate/100)/12;
+  const monthlyIns=ins/12;
+  const total=pi+monthlyTax+monthlyIns;
+  const totalInterest=(pi*n)-P;
+
+  document.getElementById('rMonthly').textContent=fmtD(total);
+  document.getElementById('rPI').textContent=fmtD(pi);
+  document.getElementById('rTax').textContent=fmtD(monthlyTax);
+  document.getElementById('rIns').textContent=fmtD(monthlyIns);
+  document.getElementById('rLoan').textContent=fmt(P);
+  document.getElementById('rInterest').textContent=fmt(totalInterest);
+
+  // Amortization
+  let bal=P, body='', y=1;
+  let yPrin=0,yInt=0;
+  for(let m=1;m<=n;m++){
+    const intPmt=bal*r;
+    const prinPmt=pi-intPmt;
+    bal-=prinPmt;
+    yPrin+=prinPmt; yInt+=intPmt;
+    if(m%12===0||m===n){
+      body+=`<tr><td>${y}</td><td>${fmt(yPrin)}</td><td>${fmt(yInt)}</td><td>${fmt(Math.max(0,bal))}</td></tr>`;
+      y++; yPrin=0; yInt=0;
+    }
+  }
+  document.getElementById('amortBody').innerHTML=body;
+  document.getElementById('mortgageResults').classList.add('visible');
+}
+
+function showTab(t){
+  document.getElementById('tab-summary').style.display=t==='summary'?'block':'none';
+  document.getElementById('tab-amort').style.display=t==='amort'?'block':'none';
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',(i===0&&t==='summary')||(i===1&&t==='amort')));
+}
+
+function toggleFaq(el){
+  el.parentElement.classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-dropdown > a').forEach(a=>{
+  a.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open');}});
+});
+</script>
+</body>
+</html>

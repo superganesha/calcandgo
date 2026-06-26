@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Use the Mortgage Calculator - CalcAndGo</title>
-  <meta name="description" content="Learn how to use CalcAndGo's mortgage calculator, including how property taxes, PMI, HOA fees, and down payments affect your monthly payment." />
-  <meta name="robots" content="index, follow" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First-Time Homebuyer Mortgage Guide | CalcAndGo</title>
+  <meta name="description" content="The complete beginner's guide to getting a mortgage. Covers loan types, pre-approval, interest rates, down payments, closing costs, and what to expect from start to close.">
+  <link rel="canonical" href="https://calcandgo.com/mortgage-guide.html">
+  <link rel="stylesheet" href="styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3432166022869677" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">Calc<span>AndGo</span></h1>
-      <p class="tagline">Simple, free, accurate calculators</p>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Calc<span>And</span>Go</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown"><a href="index.html#calculators">Calculators</a>
+        <div class="nav-dropdown-menu">
+          <a href="mortgage.html">🏠 Mortgage</a><a href="loan.html">💳 Loan</a><a href="bmi.html">⚖️ BMI</a><a href="tip.html">🍽️ Tip</a><a href="percentage.html">📊 Percentage</a><a href="converter.html">🔄 Unit Converter</a><a href="math-solver.html">🧮 Math Solver</a>
+        </div>
+      </div>
+      <a href="blog.html">Blog</a><a href="guides.html" class="active">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a>
     </div>
-  </header>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+<div class="breadcrumb"><div class="container"><a href="index.html">Home</a> <span>›</span> <a href="guides.html">Guides</a> <span>›</span> <span>Mortgage Guide</span></div></div>
+<div class="page-header"><h1>🏠 First-Time Homebuyer Mortgage Guide</h1><p>Everything you need to know about getting a mortgage — from credit score to closing day.</p></div>
 
-  <main class="container">
-    <section class="calc-panel active">
-      <h2>How to Use the Mortgage Calculator</h2>
+<div class="container">
+  <div class="content-section">
+    <p>Buying your first home is one of the most significant financial steps you'll take. The mortgage process can feel overwhelming — dozens of terms, multiple parties, months of paperwork, and large numbers at every turn. This guide walks you through the entire process in plain language so you know exactly what to expect and what decisions to make along the way.</p>
 
-      <p>The <a href="index.html">mortgage calculator</a> on CalcAndGo estimates your total monthly
-      housing payment, not just principal and interest. Here's what each field means and how it
-      affects your result.</p>
+    <div class="info-box"><p>🧮 Use our <a href="mortgage.html">Mortgage Calculator</a> alongside this guide to run real numbers for any scenario you're considering.</p></div>
 
-      <h3>Home Price and Down Payment</h3>
-      <p>Enter the full purchase price of the home, then your planned down payment. The calculator
-      subtracts the down payment from the home price to determine your loan amount. A larger down
-      payment reduces both your loan amount and your monthly principal and interest.</p>
+    <h2>Step 1: Know Your Financial Baseline</h2>
+    <p>Before you start looking at homes or talking to lenders, understand your starting position across three key dimensions:</p>
 
-      <h3>Interest Rate and Loan Term</h3>
-      <p>Enter the annual interest rate offered by your lender and the length of the loan in years
-      (typically 15 or 30 for most mortgages). These two numbers, combined with your loan amount,
-      determine your principal and interest payment using the standard amortization formula.</p>
+    <h3>Credit Score</h3>
+    <p>Your credit score is one of the most important factors lenders use to determine whether to approve your loan and at what interest rate. A higher score unlocks better rates, which means significantly lower total interest paid. Here's how scores generally map to loan access:</p>
+    <ul>
+      <li><strong>760+:</strong> Excellent — qualifies for the best available rates</li>
+      <li><strong>700–759:</strong> Good — access to competitive rates</li>
+      <li><strong>640–699:</strong> Fair — may face higher rates or require larger down payment</li>
+      <li><strong>620–639:</strong> Minimum for most conventional loans</li>
+      <li><strong>580–619:</strong> FHA loans available with 3.5% down</li>
+      <li><strong>Below 580:</strong> Very limited options; FHA with 10% down, or focus on credit improvement first</li>
+    </ul>
+    <p>Check your credit report for errors before applying — errors are more common than people realize and can be disputed and corrected within weeks.</p>
 
-      <h3>Property Tax Estimates by State</h3>
-      <p>If you're not sure what property taxes will look like, select your state from the dropdown.
-      The calculator will fill in an estimated annual property tax based on that state's average
-      effective tax rate. This is a starting point only - actual property tax rates vary significantly
-      by county, city, and school district. For an exact figure, check the listing details or your
-      county assessor's website, then enter that number directly to override the estimate.</p>
+    <h3>Debt-to-Income Ratio (DTI)</h3>
+    <p>Lenders calculate two DTI ratios: front-end (your proposed housing payment ÷ gross monthly income) and back-end (all monthly debt payments including housing ÷ gross monthly income). Most conventional lenders want a back-end DTI below 43%; FHA loans can go up to 50% in some cases. The ideal DTI is below 36%.</p>
 
-      <h3>Home Insurance, PMI, and HOA Fees</h3>
-      <p>Home insurance and PMI (private mortgage insurance) are entered as annual amounts and are
-      divided by 12 to get the monthly cost. PMI typically applies when your down payment is less
-      than 20% of the home price; if you don't know your PMI cost yet, you can leave it at 0 for a
-      rough estimate without it. HOA fees are entered as a monthly amount directly, since they're
-      usually billed monthly or quarterly rather than annually.</p>
+    <h3>Savings and Cash Reserves</h3>
+    <p>You'll need cash for: down payment (3–20% of purchase price), closing costs (2–5% of loan amount), moving expenses, and post-move cash reserves (lenders typically want 2–6 months of payments in savings). A $400,000 home with 10% down and 3% closing costs requires at least $40,000 + $10,800 = ~$51,000 in available cash at minimum.</p>
 
-      <h3>Reading the Results</h3>
-      <p>The result breaks your total monthly payment into its components: principal and interest,
-      property tax, home insurance, PMI, and HOA fees. It also shows your total interest paid over
-      the life of the loan, which can be a useful number when comparing different loan terms - a
-      15-year loan has higher monthly payments but dramatically less total interest than a 30-year
-      loan at the same rate.</p>
+    <h2>Step 2: Choose a Loan Type</h2>
 
-      <h3>A Note on Accuracy</h3>
-      <p>This calculator provides estimates for planning purposes. Actual lender quotes may include
-      additional fees, different rounding, or rate adjustments based on your credit profile. Use
-      these numbers to compare scenarios and set expectations, not as a substitute for a formal loan
-      estimate from a lender.</p>
+    <h3>Conventional Loans</h3>
+    <p>Not government-backed; meet guidelines set by Fannie Mae and Freddie Mac. Require a minimum 620 credit score and 3% down payment (though 20% avoids PMI). Best for buyers with good credit and stable income. Conforming loan limit in most areas is $806,500 in 2026.</p>
 
-      <p><a href="index.html">&larr; Back to all calculators</a></p>
-    </section>
-  </main>
+    <h3>FHA Loans</h3>
+    <p>Insured by the Federal Housing Administration. More flexible qualifying criteria — scores as low as 580 (with 3.5% down) or 500 (with 10% down). The catch: FHA loans require mortgage insurance premium (MIP) for the life of the loan if you put less than 10% down, unlike conventional PMI which can be removed.</p>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 CalcAndGo. All calculations are estimates for informational purposes only.</p>
-      <p><a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="about.html">About</a></p>
-    </div>
-  </footer>
-</body>
-</html>
+    <h3>VA Loans</h3>
+    <p>Available to eligible military veterans, active-duty service members, and surviving spouses. No down payment required, no PMI, and rates are typically competitive. A VA funding fee applies but can be rolled into the loan. One of the most favorable mortgage products available.</p>
+
+    <h3>USDA Loans</h3>
+    <p>For homes in eligible rural and some suburban areas. Zero down payment required. Income limits apply (typically 115% of the area median income). Backed by the Department of Agriculture. Can be an excellent option if you qualify geographically and by income.</p>
+
+    <h2>Step 3: Get Pre-Approved (Not Just Pre-Qualified)</h2>
+    <p>Pre-qualification is an informal estimate based on self-reported information — no credit check, no verification. Pre-approval involves an actual credit pull, income verification (pay stubs, W-2s, tax returns), and asset verification. Pre-approval carries real weight with sellers.</p>
+    <p>Apply with 2–3 lenders to compare rates — multiple mortgage inquiries within a 14–45 day window are treated as a single inquiry by credit scoring models, so shopping around doesn't hurt your score. Compare APRs (which include fees) rather than just interest rates.</p>
+
+    <h2>Step 4: Understand Your Rate Options</h2>
+
+    <h3>Fixed vs. Adjustable Rate</h3>
+    <p>A <strong>fixed-rate mortgage</strong> keeps the same interest rate for the entire loan term. Your principal and interest payment never changes, regardless of what happens to market rates. This is the safe, predictable choice.</p>
+    <p>An <strong>adjustable-rate mortgage (ARM)</strong> starts with a fixed rate for an initial period (typically 5, 7, or 10 years), then adjusts periodically based on a benchmark rate. ARMs are lower initially but introduce payment uncertainty. They make sense if you're confident you'll sell or refinance before the adjustment period begins.</p>
+
+    <h3>Rate Lock</h3>
+    <p>Once you have an accepted offer, lock your rate. Rate locks typically last 30–60 days and protect you from rate increases during underwriting. Some lenders offer float-down options that let you capture a lower rate if rates fall during the lock period — worth asking about.</p>
+
+    <h2>Step 5: Navigate Underwriting and Closing</h2>
+    <p>After your offer is accepted and you're under contract, the lender's underwriting team verifies every piece of your application: income, employment, assets, the property's value (via appraisal), and title status. Be responsive — delays in providing requested documents are the most common reason closings are pushed back.</p>
+    <p>Don't make any large purchases, open new credit accounts, or change jobs during underwriting. Any change to your financial profile can trigger a re-evaluation and potentially kill the loan approval.</p>
+
+    <h3>Closing Costs</h3>
+    <p>Expect closing costs of 2–5% of the loan amount. They typically include: origination fees, appraisal, title insurance, title search, attorney fees (in some states), prepaid interest, homeowners insurance premium, and property tax escrow. You'll receive a Closing Disclosure 3 business days before closing — review it carefully and compare to your Loan Estimate from when you applied.</p>
+
+    <h2>Common First-Timer Mistakes</h2>
+    <ul>
+      <li><strong>Shopping with emotion before qualifying:</strong> Fall in love with a house before knowing your actual budget, and you set yourself up for disappointment — or worse, an overextension.</li>
+      <li><strong>Ignoring total payment cost:</strong> Focus on what you can afford monthly, not just the purchase price. A $450,000 home at 7% is very different from $450,000 at 5.5%.</li>
+      <li><strong>Forgetting ongoing costs:</strong> Property tax, insurance, HOA fees, maintenance (budget 1–2% of home value per year), and utilities can easily add $500–$1,500+/month to housing costs beyond the mortgage.</li>
+      <li><strong>Not getting multiple quotes:</strong> A difference of 0.5% in interest rate on a $400,000 loan saves over $60,000 over 30 years. Always shop at least 3 lenders.</li>
+      <li><strong>Making financial changes during underwriting:</strong> New car loan, job change, large cash withdrawal — any of these can delay or derail your closing.</li>
+    </ul>
+
+    <div class="info-box"><p>🧮 Ready to run the numbers? Our <a href="mortgage.html">Mortgage Calculator</a> gives you a full payment breakdown with property tax by state, amortization schedule, and total interest paid.</p></div>
+  </div>
+</div>
+
+<footer><div class="container"><div class="footer-grid"><div><div class="footer-logo">Calc<span>And</span>Go</div><p>Free financial calculators and guides.</p></div><div><h4>Calculators</h4><ul><li><a href="mortgage.html">Mortgage</a></li><li><a href="loan.html">Loan</a></li><li><a href="bmi.html">BMI</a></li><li><a href="tip.html">Tip</a></li><li><a href="percentage.html">Percentage</a></li><li><a href="converter.html">Converter</a></li><li><a href="math-solver.html">Math</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="blog.html">Blog</a></li><li><a href="guides.html">Guides</a></li><li><a href="mortgage-guide.html">Mortgage Guide</a></li></ul></div><div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 CalcAndGo. All rights reserved. This guide is for educational purposes only — not financial advice.</p></div></div></footer>
+<script>document.querySelectorAll('.nav-dropdown > a').forEach(a=>{a.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open');}});});</script>
+</body></html>
